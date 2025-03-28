@@ -1,0 +1,19 @@
+{
+  "name": "tsiddiqui-server-cs5610-sp25",
+  "version": "1.0.0",
+  "description": "Backend server for Kambaz",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/talals1/tsiddiqui-server-cs5610-sp25.git"
+  },
+  "author": "Talal Siddiqui",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/talals1/tsiddiqui-server-cs5610-sp25/issues"
+  },
+  "homepage": "https://github.com/talals1/tsiddiqui-server-cs5610-sp25#readme"
+}
