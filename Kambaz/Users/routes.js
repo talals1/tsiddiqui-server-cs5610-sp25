@@ -4,6 +4,23 @@ import * as enrollmentsDao from "../Enrollments/dao.js";
 // let currentUser = null;
 
 export default function UserRoutes(app) {
+
+  const joinCourse = (req, res) => {
+    const { courseId } = req.params;
+    const currentUser = req.session["currentUser"];
+    enrollmentsDao.enrollUserInCourse(currentUser._id, courseId);
+    res.sendStatus(200);
+  }
+  app.post("/api/users/current/courses/:courseId", joinCourse);
+
+  const leaveCourse = (req, res) => {
+    const { courseId } = req.params;
+    const currentUser = req.session["currentUser"];
+    enrollmentsDao.unenrollUserInCourse(currentUser._id, courseId);
+    res.sendStatus(200);
+  }
+  app.delete("/api/users/current/courses/:courseId", leaveCourse);
+
   const createCourse = (req, res) => {
     const currentUser = req.session["currentUser"];
     const newCourse = courseDao.createCourse(req.body);
