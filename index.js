@@ -5,6 +5,8 @@ import Lab5 from './Lab5/index.js';
 import cors from "cors";
 import UserRoutes from "./Kambaz/Users/routes.js";
 import CourseRoutes from "./Kambaz/Courses/routes.js";
+import ModuleRoutes from "./Kambaz/Modules/routes.js";
+import "dotenv/config";
 
 const app = express()
 app.use(
@@ -31,7 +33,8 @@ app.use(session(sessionOptions));
 app.use(express.json());
 
 UserRoutes(app);
-CourseRoutes(app)
+CourseRoutes(app);
+ModuleRoutes(app);
 Lab5(app)
 Hello(app)
 
