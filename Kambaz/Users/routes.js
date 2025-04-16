@@ -110,7 +110,7 @@ export default function UserRoutes(app) {
     if (currentUser && currentUser._id === userId) {
       req.session["currentUser"] = { ...currentUser, ...userUpdates };
     }
-    res.json(currentUser);
+    res.json(req.session["currentUser"]);
   };
 
 
